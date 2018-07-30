@@ -8,15 +8,15 @@
 /////////////////////////////////////////////////////////////////////
 // 환경변수 기술
 // SDK 사용자에 맞게 수정 필요.
-const char ssid[] = "winmin";
-const char wifi_pass[] = "11113334";
-const char oid[] = "0000000000000000_01033492780";
-const char dKey[] = "129f47b7-e92d-3347-f1ad-67681a5145e3";
-const char mqttSvr[] = "lottehotel.koreacentral.cloudapp.azure.com";
-const char cseBaseUri[] = "/education/base";
-const char cseUri[] = "education";
-const char mqttUsername[] = "education";
-const char mqttPassword[] = "education";
+const char ssid[] = "Your_WiFi_SSID";
+const char wifi_pass[] = "Your_WiFi_Password";
+const char oid[] = "Your_Device_OID_in_IoT_Platform";
+const char dKey[] = "Your_Device_Key_in_IoT_Platform";
+const char mqttSvr[] = "Platform's_MQTT_Server_Address";
+const char cseBaseUri[] = "Platform's_CSE_BASE_URI";
+const char cseUri[] = "Platform's_CSE_URI";
+const char mqttUsername[] = "MQTT_USERNAME";
+const char mqttPassword[] = "MQTT_PASSWORD";
 /////////////////////////////////////////////////////////////////////
 
 WiFiClient net;
