@@ -6,8 +6,7 @@
 #include <tov.h>
 
 /////////////////////////////////////////////////////////////////////
-// 환경변수 기술
-// SDK 사용자에 맞게 수정 필요.
+// Environment variables for Using IoT Platform.
 const char ssid[] = "Your_WiFi_SSID";
 const char wifi_pass[] = "Your_WiFi_Password";
 const char oid[] = "Your_Device_OID_in_IoT_Platform";
