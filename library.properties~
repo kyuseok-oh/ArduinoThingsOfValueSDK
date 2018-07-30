@@ -1,0 +1,9 @@
+name=ThingsOfValue SDK for Arduino
+version=1.0.0
+author=Kyuseok Oh
+maintainer=Joel Gaehwiler <joel.gaehwiler@gmail.com>
+sentence=LOTTE IoT Platform (a.k.a Things Of Value) SDK for Arduino
+paragraph=This library is wrapper of MQTT Library(https://github.com/256dpi/arduino-mqtt) for developing device with LOTTE IoT Platform.
+category=Communication
+url=https://github.com/kyuseok-oh/ArduinoThingsOfValueSDK
+architectures=*
