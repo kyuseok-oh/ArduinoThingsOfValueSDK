@@ -15,9 +15,19 @@ char putContentJson[1024];
 MQTTClient client(1024);
 int qos = 1;
 
+int nodeCount = 0;
+PutContentNode *head = NULL;
+PutContentNode *tail = NULL;
+
 boolean tovLoop() { return client.loop(); }
 boolean tovConnected() { return client.connected(); }
-boolean tovConnect(const char clientId[], const char username[], const char password[]){ return client.connect(oid, username, password); }
+boolean tovConnect(){
+	sprintf(mqttPwd, "D|%s", dkey);
+	return client.connect(oid, oid, mqttPwd);
+}
+
+boolean tovConnect(const char clientId[], const char username[], const char password[]){ return client.connect(clientId, username, password); }
+
 boolean tovSubscribe(){
 	boolean unsub = client.unsubscribe(subscribeTopic);
 	boolean sub = client.subscribe(subscribeTopic);
@@ -37,19 +47,19 @@ void tovBegin(Client &net, const char *Oid, const char *DKey, const char *MqttSv
 }
 
 void putContent(String sensorName, String contentType, String data) {
-  createPutContentJson(putContentJson, cseBaseUri, oid, sensorName.c_str(), contentType.c_str(), data.c_str());
+  createPutContentJson(cseBaseUri, oid, sensorName.c_str(), contentType.c_str(), data.c_str());
   client.publish(publishTopic, putContentJson, true, qos);
 }
 
-void createPutContentJson(char putContentJson[], const char cseBaseUri[], const char oid[], const char sensorName[], const char contentType[], const char data[]) {
+void createPutContentJson(const char cseBaseUri[], const char oid[], const char sensorName[], const char contentType[], const char data[]) {
 	sprintf(putContentJson, "{\"m2m:rqp\":{\"op\":1,\"to\":\"%s/S%s/%s\",\"fr\":\"/S%s\",\"rqi\":\"rqi-%s-%lu\",\"ty\":4,\"pc\":{\"m2m:cin\":{\"cnf\":\"%s:0\",\"con\":\"%s\"}}}}", cseBaseUri, oid, sensorName, oid, oid, millis(), contentType, data);
 }
 
-String cmd_get(const String cmd, const String payload) {
+String cmd_get(String cmd, String payload) {
   return cmd_get_impl(cmd, payload, 0);
 }
 
-String cmd_get_impl(const String cmd, const String payload, int i) {
+String cmd_get_impl(String cmd, String payload, int i) {
   int j = 0;
   int payload_length = payload.length();
 
@@ -94,4 +104,8 @@ String cmd_get_impl(const String cmd, const String payload, int i) {
   } else {
     cmd_get_impl(cmd, payload, i);
   }
+}
+
+void enqueNode(String sensorName, String contentType, String data){
+	
 }
