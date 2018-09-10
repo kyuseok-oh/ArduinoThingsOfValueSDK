@@ -12,3 +12,7 @@ This library can be used with many of Arduino-like hardware such as Arduino/Genu
 * Connect to ***ThingsOfValue*** Iot Platform.
 * Receive data from the ***ThingsOfValue*** Iot Platform to the device.
 * Send data to the ***ThingsOfValue*** Iot Platform.
+
+## 4. Example
+
+## 5. APIs
