@@ -56,10 +56,13 @@ void createPutContentJson(const char cseBaseUri[], const char oid[], const char 
 }
 
 String cmd_get(String cmd, String payload) {
-  return cmd_get_impl(cmd, payload, 0);
+/*  return cmd_get_impl(cmd, payload, 0);
 }
 
 String cmd_get_impl(String cmd, String payload, int i) {
+*/
+  int i = 0;
+Seeking:
   int j = 0;
   int payload_length = payload.length();
 
@@ -102,10 +105,12 @@ String cmd_get_impl(String cmd, String payload, int i) {
     }
     return payload.substring(i, j);
   } else {
-    cmd_get_impl(cmd, payload, i);
+    goto Seeking;
   }
 }
 
+/*
 void enqueNode(String sensorName, String contentType, String data){
 	
 }
+*/
