@@ -56,13 +56,10 @@ void createPutContentJson(const char cseBaseUri[], const char oid[], const char 
 }
 
 String cmd_get(String cmd, String payload) {
-  return cmd_get_impl(cmd, payload, 0);
-}
-
-String cmd_get_impl(String cmd, String payload, int i) {
+  int i = 0;
   int j = 0;
   int payload_length = payload.length();
-
+Seeking:
   if ((i + 2) > payload_length) {
     return String("null");
   }
@@ -86,7 +83,7 @@ String cmd_get_impl(String cmd, String payload, int i) {
         i = i + 4; break;
       } else if ((i + 5) > payload_length) {
         return String("null");
-      }
+      }Support multiple receiving commands.
     }
     for (; i < payload_length; i++) {
       if ((payload.charAt(i) != '\"') && (payload.charAt(i) != ' ') && (payload.charAt(i) != ',') && (payload.charAt(i) != ':')) {
@@ -102,10 +99,12 @@ String cmd_get_impl(String cmd, String payload, int i) {
     }
     return payload.substring(i, j);
   } else {
-    cmd_get_impl(cmd, payload, i);
+    goto Seeking;
   }
 }
 
+/*
 void enqueNode(String sensorName, String contentType, String data){
 	
 }
+*/
