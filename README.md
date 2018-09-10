@@ -1,7 +1,7 @@
 # ThingsOfValue SDK for Arduino
 
 ## 1. What is ThingsOfValue?
-***ThingsOfValue*** is an IoT platform of the LOTTE DATA COMMUNICATION COMPANY which can easily develop IoT devices.
+***ThingsOfValue*** is an IoT platform of the LOTTE DATA COMMUNICATION COMPANY that complies with the oneM2M global standard, and which can easily develop IoT devices.
 
 ## 2. ThingsOfValue SDK for Arduino
 ***ThingsOfValue SDK for Arduino*** is wrapper of [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) Library for developing device with LOTTE IoT Platform.
