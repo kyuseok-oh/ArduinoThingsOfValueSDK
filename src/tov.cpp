@@ -83,7 +83,7 @@ Seeking:
         i = i + 4; break;
       } else if ((i + 5) > payload_length) {
         return String("null");
-      }Support multiple receiving commands.
+      }
     }
     for (; i < payload_length; i++) {
       if ((payload.charAt(i) != '\"') && (payload.charAt(i) != ' ') && (payload.charAt(i) != ',') && (payload.charAt(i) != ':')) {
