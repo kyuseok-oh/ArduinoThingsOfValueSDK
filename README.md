@@ -17,7 +17,7 @@ This library can be used with many of Arduino-like hardware such as Arduino/Genu
 The following example is a blink code which controls two LEDs by ***ThingsOfValue*** IoT platform. Each LED is mapped a sensor and an actuator. The sensor is current LED's status. The actuator is used as a switch for each LED.
 In the source code below, a nodeMCU (ESP8266) has been used as a device.
 ```c++
-// Things of Value(TOV, a.k.a. L.IPS) SDK for Arduino WiFi V1.00 
+// Things of Value(TOV, a.k.a. L.IPS) SDK for Arduino WiFi V1.01 
 // Copyright (c) 2018, LDCC. All Rights Reserved.
 // Author: Kyuseok Oh
 
@@ -90,7 +90,7 @@ void runningFunc(){
 
 void loop()
 {
-  // Running Lotte IoT Platform code in the background.
+  // Running LOTTE IoT Platform (ThingsOfValue) code in the background.
   tovLoop();
 
   // If platform connection is disconnected, this function reconnects MQTT.
