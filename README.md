@@ -176,8 +176,8 @@ Using the following function to initialize device for using the ThingsOfValue Io
 ```c++
 void tovBegin(Client &net, const char *Oid, const char *DKey, const char *MqttSvr, const char *CseBaseUri, const char *CseUri, MQTTClientCallbackSimple cb);
 ```
-- The 'Oid' is a device ID which was created on the platform.
-- The 'DKey' is an authorization key which was automated generated automatically by the platform.
+- The `Oid` is a device ID which was created on the platform.
+- The `DKey` is an authorization key which was automated generated automatically by the platform.
 
 
 
