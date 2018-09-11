@@ -171,3 +171,14 @@ void mqttConnect() {
 ```
 
 ## 5. APIs
+
+Using the following function to initialize device for using the ThingsOfValue IoT platform:
+```c++
+void tovBegin(Client &net, const char *Oid, const char *DKey, const char *MqttSvr, const char *CseBaseUri, const char *CseUri, MQTTClientCallbackSimple cb);
+```
+- The 'Oid' is a device ID which was created on the platform.
+- The 'DKey' is an authorization key which was automated generated automatically by the platform.
+
+
+
+See also the API documentation for the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.
