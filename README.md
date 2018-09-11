@@ -178,6 +178,9 @@ void tovBegin(Client &net, const char *Oid, const char *DKey, const char *MqttSv
 ```
 - The `Oid` is a device ID which was created on the platform.
 - The `DKey` is an authorization key which was automated generated automatically by the platform.
+- The `MqttSvr` is the address of MQTT server.
+- `CseBaseUri` and `CseUri` are environment variables for ThingsOfValue platform. They are defined by the platform.
+- The `cb` is a callback function that will be run when a message is received from the mqtt server.
 
 
 
