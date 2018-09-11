@@ -200,5 +200,9 @@ boolean tovSubscribe();
 ```
 
 Use the following function to check the ***ThingsOfValue*** IoT platform connection of the device.
+```c++
+boolean tovConnected();
+```
+
 
 See also the API documentation for the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.
