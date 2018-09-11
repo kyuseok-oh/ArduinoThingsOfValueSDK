@@ -14,5 +14,10 @@ This library can be used with many of Arduino-like hardware such as Arduino/Genu
 * Send data to the ***ThingsOfValue*** Iot Platform.
 
 ## 4. Example
+The following example is a blink code which controls two LEDs by ThingsOfValue IoT platform. Each LED is mapped a sensor and an actuator. The sensor is current LED's status. The actuator is used as a switch for each LED.
+In the source code below, a nodeMCU (ESP8266) has been used as a device.
+```c++
+
+```
 
 ## 5. APIs
