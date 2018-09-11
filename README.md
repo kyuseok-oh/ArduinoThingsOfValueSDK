@@ -194,4 +194,11 @@ boolean tovConnect(const char clientId[], const char username[], const char pass
 - To use private IoT platform or other mqtt brokers, use the second function.
 - This function returns a Boolean value indicating whether the connection was successful.
 
+To subscribe a MQTT topic on the ThingsOfValue IoT Platform, use the following function:
+```c++
+boolean tovSubscribe();
+```
+
+Use the following function to check the ***ThingsOfValue*** IoT platform connection of the device.
+
 See also the API documentation for the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.

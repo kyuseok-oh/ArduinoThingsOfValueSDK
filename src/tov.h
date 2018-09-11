@@ -9,9 +9,10 @@ typedef struct putContentNode{
 boolean tovLoop();
 boolean tovConnected();
 
-//For Education Platform
+//For Private Platform
 boolean tovConnect(const char clientId[], const char username[], const char password[]);
-//For TOV
+
+//For ThingsOfValue Platform
 boolean tovConnect();
 
 boolean tovSubscribe();
