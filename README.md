@@ -172,7 +172,7 @@ void mqttConnect() {
 
 ## 5. APIs
 
-Using the following function to initialize device for using the ThingsOfValue IoT platform:
+Use the following function to initialize device for using the ThingsOfValue IoT platform:
 ```c++
 void tovBegin(Client &net, const char *Oid, const char *DKey, const char *MqttSvr, const char *CseBaseUri, const char *CseUri, MQTTClientCallbackSimple cb);
 ```
@@ -182,6 +182,16 @@ void tovBegin(Client &net, const char *Oid, const char *DKey, const char *MqttSv
 - `CseBaseUri` and `CseUri` are environment variables for ThingsOfValue platform. They are defined by the platform.
 - The `cb` is a callback function that will be run when a message is received from the mqtt server.
 
+To connect to the ***ThingsOfValue*** IoT Platform, use the following function:
+```c++
+//For ThingsOfValue Platform
+boolean tovConnect();
 
+//For Private IoT Platform
+boolean tovConnect(const char clientId[], const char username[], const char password[]);
+```
+- If you want to use the ***ThingsOfValue*** IoT Platform, use the first function without arguments.
+- To use private IoT platform or other mqtt brokers, use the second function.
+- This function returns a Boolean value indicating whether the connection was successful.
 
 See also the API documentation for the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.
