@@ -199,7 +199,7 @@ To subscribe a MQTT topic on the ThingsOfValue IoT Platform, use the following f
 boolean tovSubscribe();
 ```
 
-Use the following function to check the ***ThingsOfValue*** IoT platform connection of the device.
+Use the following function to check the ***ThingsOfValue*** IoT platform connection of the device:
 ```c++
 boolean tovConnected();
 ```
@@ -211,10 +211,19 @@ boolean tovLoop();
 - This function should be called in every `loop`
 - This function is a simple wrapper function of the loop () function of the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.
 
+To send sensor data, use the following function:
+```c++
 void putContent(String sensorName, String contentType, String data);
+```
+- The `sensorName` is defined when registering sensors of the device.
+- The `contentType` is a MIME type such as `text/plain`.
+- Put the value that you want to send to the platform as a String type in the `data` parameter.
 
+To receive a command or a data from ThingsOfValue IoT platform to your device, use the following function:
+```c++
 String cmd_get(String cmd, String payload);
-
-
+```
+- The `cmd` is defined when registering command keys of actuators of the device on the ***ThingsOfValue*** IoT platform.
+- Put the value which is a raw data received from ***ThingsOfValue*** IoT platform via callback function that is defined in `tovBegin` function into the `payload` parameter.
 
 See also the API documentation for the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.
