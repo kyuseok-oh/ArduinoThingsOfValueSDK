@@ -204,5 +204,17 @@ Use the following function to check the ***ThingsOfValue*** IoT platform connect
 boolean tovConnected();
 ```
 
+Sends and receives packets:
+```c++
+boolean tovLoop();
+```
+- This function should be called in every `loop`
+- This function is a simple wrapper function of the loop () function of the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.
+
+void putContent(String sensorName, String contentType, String data);
+
+String cmd_get(String cmd, String payload);
+
+
 
 See also the API documentation for the [arduino-mqtt](https://github.com/256dpi/arduino-mqtt) library.
